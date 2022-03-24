@@ -12,6 +12,16 @@ function renderNewsCard () {
 // Function that displays the news card from news api headline
 function renderNews (data) {
     console.log(data)
+    const mediaOutlet = data.articles[0].source.name;
+    const title = data.articles[0].title;
+    const description = data.articles[0].description;
+    const mediaOutletURL = data.articles[0].url
+    console.log(mediaOutlet);
+    console.log(title);
+    console.log(description);
+    console.log(mediaOutletURL);
+
+    
 }
 
 
