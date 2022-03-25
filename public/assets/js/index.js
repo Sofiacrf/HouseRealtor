@@ -6,22 +6,34 @@ const newsApiKey = '7f69ce2de7f443b8b756ea57b6f8fcad';
 const headlinesContainer = document.querySelector('#top-news');
 
 // Function that renders the information in a card
-function renderNewsCard () {
+// function renderNewsCard (data) {
+//     console.log(data);
+//     // const mediaOutlet = newsData.articles[0].source.name;
+//     // const title = newsData.articles[0].title;
+//     // const description = newsData.articles[0].description;
+//     // const mediaOutletURL = newsData.articles[0].url
+//     // console.log(mediaOutlet);
+//     // console.log(description);
+//     // console.log(mediaOutletURL);
+//     // console.log(newsData);
+//     const title = data.articles[1].title;
+//     console.log(title);
+    
+    
 
-}
+// }
 // Function that displays the news card from news api headline
 function renderNews (data) {
-    console.log(data)
-    const mediaOutlet = data.articles[0].source.name;
-    const title = data.articles[0].title;
-    const description = data.articles[0].description;
-    const mediaOutletURL = data.articles[0].url
-    console.log(mediaOutlet);
-    console.log(title);
-    console.log(description);
-    console.log(mediaOutletURL);
+    // Data of whole articles
+    const newsData = data.articles;
 
-    
+    // Loop through the data articles
+    for (let i = 0; i < newsData.length; i++) {
+        if(newsData) {
+            const mediaOutlet = data.articles[0].title;
+            console.log(mediaOutlet)
+        }
+    };
 }
 
 
