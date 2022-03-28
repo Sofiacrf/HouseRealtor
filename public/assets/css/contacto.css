@@ -108,3 +108,6 @@ body {
 span a {
 	color: #BBB;
 }
+.form-box ul li {
+	list-style-type: none;
+}
