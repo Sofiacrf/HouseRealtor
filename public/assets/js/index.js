@@ -15,26 +15,23 @@ function renderNews (data) {
         let newsTitle = document.createElement('li');
         newsTitle.innerHTML = data.articles[i].title;
         let newsContent = document.createElement('li');
-        newsContent.innerHTML = data.articles[i].content;
+        newsContent.innerHTML = data.articles[i].description;
         let newsName = document.createElement('li');
         newsName.innerHTML = data.articles[i].source.name;
-        let newsURL = document.createElement('li');
-        newsURL.innerHTML = data.articles[i].url
+
 
         // Set the class for each element
-        displayThree.setAttribute('class', 'list-group-item-info border-0 text-grey size10');
+        displayThree.setAttribute('class', 'list-group-item-info border-0  size10');
         displayThree.setAttribute('class', 'card');
         displayThree.setAttribute('class','column-count:3');
-        newsTitle.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
-        newsContent.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
-        newsName.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
-        newsURL.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
+        newsTitle.setAttribute('class', 'list-group-item-info border-0  size10')
+        newsContent.setAttribute('class', 'list-group-item-info border-0  size10')
+        newsName.setAttribute('class', 'list-group-item-info border-0  size10')
 
         // Append the elements in HTML
         displayThree.append(newsTitle);
         displayThree.append(newsContent);
         displayThree.append(newsName);
-        displayThree.append(newsURL);
         headlinesContainer.append(displayThree);
     }
 }
