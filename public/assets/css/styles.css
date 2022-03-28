@@ -7,4 +7,18 @@ body {
 
 nav div ul li {
   float: left;
+  font-weight: 300;
+}
+
+/* News Section */
+#display-news {
+  width: 18rem;
+  border-style: solid;
+  border-color: rgb(226, 225, 225);
+}
+
+#display-news li {
+  list-style: none;
+  text-align: justify;
+  font-weight: 300;
 }

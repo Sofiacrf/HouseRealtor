@@ -1,52 +1,47 @@
-// Global Variables for the API
+// GLOBAL VARIABLES
 const newsApiRootURL = 'https://newsapi.org';
 const newsApiKey = '7f69ce2de7f443b8b756ea57b6f8fcad';
-const displayNews = document.querySelector('#display-news');
-const displayThree = document.querySelector('#display-three');
 
-// DOM Elements
-const headlinesContainer = document.querySelector('#top-news');
-    
-// Function that displays the news card from news api headline
-function renderNews (data) {
-    for (let i = 0; i < 3;  i ++) {
-        // Set the data variables
-        console.log(data)
-        let newsTitle = document.createElement('li');
-        newsTitle.innerHTML = data.articles[i].title;
-        let newsContent = document.createElement('li');
-        newsContent.innerHTML = data.articles[i].description;
-        let newsName = document.createElement('li');
-        newsName.innerHTML = data.articles[i].source.name;
+// DOM Element References
+const newsContainer = document.querySelector('#news');
 
-
-        // Set the class for each element
-        displayThree.setAttribute('class', 'list-group-item-info border-0  size10');
-        displayThree.setAttribute('class', 'card');
-        displayThree.setAttribute('class','column-count:3');
-        newsTitle.setAttribute('class', 'list-group-item-info border-0  size10')
-        newsContent.setAttribute('class', 'list-group-item-info border-0  size10')
-        newsName.setAttribute('class', 'list-group-item-info border-0  size10')
-
-        // Append the elements in HTML
-        displayThree.append(newsTitle);
-        displayThree.append(newsContent);
-        displayThree.append(newsName);
-        headlinesContainer.append(displayThree);
-    }
+// Function to render the news card
+function renderNewsCard (articles) {
+    console.log(articles);
 }
 
+// Function to display the news
+function renderNews(articles) {
+   let headingCol = document.createElement('div');
+   let heading = document.createElement('h4');
 
-// Function that fetches the news data from the api
+   headingCol.setAttribute('class', 'col-12');
+   heading.textContent = 'Top News';
+   headingCol.append(heading);
+
+   newsContainer.innerHTML = '';
+   newsContainer.append(headingCol);
+
+  for (let i = 0; i < 5; i++) {
+      renderNewsCard(articles[i]);
+  }
+}
+
+// Function to render the API articles
+function renderItems(data) {
+    renderNews(data.articles);
+}
+
+// Function to fetch the API data
 function fetchNews () {
-const country = 'mx';
+const country = 'us';
 const category = 'business';
 const apiURL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${newsApiKey}`;
 
 fetch(apiURL)
 .then(res => res.json())
 .then(function (data) {
-    renderNews(data)
+    renderItems(data);
 })
 .catch(err => console.log(err))
 }
