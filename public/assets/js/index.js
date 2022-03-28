@@ -1,39 +1,42 @@
 // Global Variables for the API
 const newsApiRootURL = 'https://newsapi.org';
 const newsApiKey = '7f69ce2de7f443b8b756ea57b6f8fcad';
+const displayNews = document.querySelector('#display-news');
+const displayThree = document.querySelector('#display-three');
 
 // DOM Elements
 const headlinesContainer = document.querySelector('#top-news');
-
-// Function that renders the information in a card
-// function renderNewsCard (data) {
-//     console.log(data);
-//     // const mediaOutlet = newsData.articles[0].source.name;
-//     // const title = newsData.articles[0].title;
-//     // const description = newsData.articles[0].description;
-//     // const mediaOutletURL = newsData.articles[0].url
-//     // console.log(mediaOutlet);
-//     // console.log(description);
-//     // console.log(mediaOutletURL);
-//     // console.log(newsData);
-//     const title = data.articles[1].title;
-//     console.log(title);
     
-    
-
-// }
 // Function that displays the news card from news api headline
 function renderNews (data) {
-    // Data of whole articles
-    const newsData = data.articles;
+    for (let i = 0; i < 3;  i ++) {
+        // Set the data variables
+        console.log(data)
+        let newsTitle = document.createElement('li');
+        newsTitle.innerHTML = data.articles[i].title;
+        let newsContent = document.createElement('li');
+        newsContent.innerHTML = data.articles[i].content;
+        let newsName = document.createElement('li');
+        newsName.innerHTML = data.articles[i].source.name;
+        let newsURL = document.createElement('li');
+        newsURL.innerHTML = data.articles[i].url
 
-    // Loop through the data articles
-    for (let i = 0; i < newsData.length; i++) {
-        if(newsData) {
-            const mediaOutlet = data.articles[0].title;
-            console.log(mediaOutlet)
-        }
-    };
+        // Set the class for each element
+        displayThree.setAttribute('class', 'list-group-item-info border-0 text-grey size10');
+        displayThree.setAttribute('class', 'card');
+        displayThree.setAttribute('class','column-count:3');
+        newsTitle.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
+        newsContent.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
+        newsName.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
+        newsURL.setAttribute('class', 'list-group-item-info border-0 text-grey size10')
+
+        // Append the elements in HTML
+        displayThree.append(newsTitle);
+        displayThree.append(newsContent);
+        displayThree.append(newsName);
+        displayThree.append(newsURL);
+        headlinesContainer.append(displayThree);
+    }
 }
 
 
