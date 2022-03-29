@@ -7,7 +7,6 @@ const newsContainer = document.querySelector('#news');
 
 // Function to render the news card
 function renderNewsCard(articles) {
-    console.log(articles);
     // Set the data API variables
     const newsTitle = articles.title;
     const newsContent = articles.description;
@@ -31,8 +30,8 @@ function renderNewsCard(articles) {
     // Setting Attributes
     col.setAttribute('class', 'col-md');
     col.classList.add('news-card');
-    card.setAttribute('class', 'card bg-light border-secondary');
-    cardBody.setAttribute('class', 'card-body text-secondary p-2');
+    card.setAttribute('class', 'card text-dark bg-light border-secondary');
+    cardBody.setAttribute('class', 'card-body p-2');
     titleEl.setAttribute('class', 'card-title text-center');
     contentEl.setAttribute('class', 'card-text');
     sourceEl.setAttribute('class', 'card-text');
@@ -42,7 +41,7 @@ function renderNewsCard(articles) {
     titleEl.textContent = `${newsTitle}`;
     contentEl.textContent = `${newsContent}`;
     sourceEl.textContent = `Fuente: ${newsSource}`;
-    urlEl.textContent = `link: ${newsURL}`;
+    urlEl.textContent = `${newsURL}`;
 
     newsContainer.append(col);
 }
