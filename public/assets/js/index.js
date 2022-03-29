@@ -30,8 +30,8 @@ function renderNewsCard(articles) {
 
     // Setting Attributes
     col.setAttribute('class', 'col-md');
-    col.classList.add('five-day-card');
-    card.setAttribute('class', 'card bg-primary h-100 text-white');
+    col.classList.add('news-card');
+    card.setAttribute('class', 'card bg-light');
     cardBody.setAttribute('class', 'card-body p-2');
     titleEl.setAttribute('class', 'card-title');
     contentEl.setAttribute('class', 'card-text');
@@ -53,13 +53,13 @@ function renderNews(articles) {
     const heading = document.createElement('h4');
  
     headingCol.setAttribute('class', 'col-12');
-    heading.textContent = 'Top News';
+    heading.textContent = 'Noticias';
     headingCol.append(heading);
 
     newsContainer.innerHTML = '';
     newsContainer.append(headingCol);
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         renderNewsCard(articles[i]);
     }
 }

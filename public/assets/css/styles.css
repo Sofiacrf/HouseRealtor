@@ -10,15 +10,10 @@ nav div ul li {
   font-weight: 300;
 }
 
-/* News Section */
-#display-news {
-  width: 18rem;
-  border-style: solid;
-  border-color: rgb(226, 225, 225);
-}
-
-#display-news li {
-  list-style: none;
-  text-align: justify;
+.news-card {
+  margin-left: 5%;
   font-weight: 300;
+  text-align: justify;
+  height: 80;
+  width: 50;
 }
