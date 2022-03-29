@@ -31,18 +31,18 @@ function renderNewsCard(articles) {
     // Setting Attributes
     col.setAttribute('class', 'col-md');
     col.classList.add('news-card');
-    card.setAttribute('class', 'card bg-light');
-    cardBody.setAttribute('class', 'card-body p-2');
-    titleEl.setAttribute('class', 'card-title');
+    card.setAttribute('class', 'card bg-light border-secondary');
+    cardBody.setAttribute('class', 'card-body text-secondary p-2');
+    titleEl.setAttribute('class', 'card-title text-center');
     contentEl.setAttribute('class', 'card-text');
     sourceEl.setAttribute('class', 'card-text');
-    urlEl.setAttribute('class', 'card-text');
+    urlEl.setAttribute('class', 'nav-link active');
 
     // Add content to elements
     titleEl.textContent = `${newsTitle}`;
     contentEl.textContent = `${newsContent}`;
-    sourceEl.textContent = `${newsSource}`;
-    urlEl.textContent = `${newsURL}`;
+    sourceEl.textContent = `Fuente: ${newsSource}`;
+    urlEl.textContent = `link: ${newsURL}`;
 
     newsContainer.append(col);
 }
@@ -50,11 +50,7 @@ function renderNewsCard(articles) {
 // Function to display the news
 function renderNews(articles) {
     const headingCol = document.createElement('div');
-    const heading = document.createElement('h4');
- 
     headingCol.setAttribute('class', 'col-12');
-    heading.textContent = 'Noticias';
-    headingCol.append(heading);
 
     newsContainer.innerHTML = '';
     newsContainer.append(headingCol);
@@ -62,7 +58,7 @@ function renderNews(articles) {
     for (let i = 0; i < 3; i++) {
         renderNewsCard(articles[i]);
     }
-}
+} 
 
 // Function to render the API articles
 function renderItems(data) {
