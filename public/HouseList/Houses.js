@@ -22,6 +22,6 @@ const houses = [
     },
   ];
  
-  function renderHouses () {
-      let 
-  }
+  // DOM Element References
+  const housesContainer = document.querySelector('#houses-list')
+
