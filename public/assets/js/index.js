@@ -67,7 +67,7 @@ function renderItems(data) {
 
 // Function to fetch the API data
 function fetchNews() {
-    const country = 'us';
+    const country = 'mx';
     const category = 'business';
     const apiURL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${newsApiKey}`;
 
