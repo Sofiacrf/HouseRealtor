@@ -1,21 +1,29 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const postSchema = new Schema(
-    {
-        title: {
-            type: String,
-            required: true
+const catalogueSchema = new Schema({
+    catalogue: [
+        {
+            title: {
+                type: String,
+                required: true
+            },
+            imageUrl: {
+                type: String,
+                required: true
+            },
+            description: {
+                type: String,
+                required: true
+            },
+            price :
+            {
+                type: Number,
+            },
         },
-        imageUrl: {
-            type: String,
-            required: true
-        },
-        description: {
-            type: String,
-            required: true
-        }
-    },
-);
+    ],
+});
 
-module.exports = mongoose.model('Post', postSchema);
+const Catalogue = mongoose.model('Catalogue', catalogueSchema);
+
+module.exports = Catalogue;
