@@ -21,6 +21,7 @@ mongoose.connect('mongodb://localhost/catalogue', {
 
 // routes
 app.use(require('./routes/feed.js'));
+app.use(require('./routes/view.js'));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
